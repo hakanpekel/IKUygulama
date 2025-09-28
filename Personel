@@ -1,0 +1,28 @@
+public class Personel {
+    private String ad;
+    private String soyad;
+    private String pozisyon;
+
+
+    public Personel(String ad, String soyad, String pozisyon) {
+        this.ad = ad;
+        this.soyad = soyad;
+        this.pozisyon = pozisyon;
+    }
+
+
+    public String getTamAd() {
+        return this.ad + " " + this.soyad;
+    }
+
+    public String getPozisyon() {
+        return pozisyon;
+    }
+
+
+    @Override
+    public String toString() {
+        return getTamAd() + " | Pozisyon: " + pozisyon;
+    }
+}
+
