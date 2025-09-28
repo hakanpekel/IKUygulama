@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Departman {
+    private String ad;
+    private String kod;
+    // Personelleri tutmak için List<Personel> koleksiyonu
+    private List<Personel> personeller;
+
+
+    public Departman(String ad, String kod) {
+        this.ad = ad;
+        this.kod = kod;
+        // Listeyi başlatma
+        this.personeller = new ArrayList<>();
+    }
+
+
+    public void personelEkle(Personel personel) {
+        this.personeller.add(personel);
+        System.out.println("-> " + personel.getTamAd() + ", " + this.ad + " departmanına eklendi.");
+    }
+
+
+    public List<Personel> personelleriDon() {
+        return this.personeller;
+    }
+
+
+    public String getAd() {
+        return ad;
+    }
+}
+
+
