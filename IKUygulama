@@ -1,0 +1,41 @@
+import java.util.List;
+public class IKUygulama {
+    public static void main(String[] args) {
+        System.out.println("--- Departman Nesnesi Oluşturuluyor ---");
+
+
+        Departman pazarlamaDepartmani = new Departman("Dijital Pazarlama", "PZR05");
+        System.out.println("Departman oluşturuldu: " + pazarlamaDepartmani.getAd());
+        System.out.println("----------------------------------------");
+
+
+        Personel p1 = new Personel("Cem", "Öztürk", "Pazarlama Uzmanı");
+        Personel p2 = new Personel("Deniz", "Aksoy", "Sosyal Medya Yöneticisi");
+        Personel p3 = new Personel("Burak", "Kılıç", "Grafik Tasarımcı");
+
+
+        pazarlamaDepartmani.personelEkle(p1);
+        pazarlamaDepartmani.personelEkle(p2);
+        pazarlamaDepartmani.personelEkle(p3);
+        System.out.println("----------------------------------------");
+
+
+
+        List<Personel> personelListesi = pazarlamaDepartmani.personelleriDon();
+
+
+
+        System.out.println("*** " + pazarlamaDepartmani.getAd() + " Departmanı Personel Listesi (" + personelListesi.size() + " kişi) ***");
+
+        if (personelListesi.isEmpty()) {
+            System.out.println("Departmanda kayıtlı personel bulunmamaktadır.");
+        } else {
+
+            for (Personel personel : personelListesi) {
+
+                System.out.println("- " + personel);
+            }
+        }
+    }
+}
+
